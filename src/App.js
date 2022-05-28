@@ -8,7 +8,7 @@ class App extends Component {
   };
 
   onFileChange = (event) => {
-    this.setState({ selectedFile: event.target.file[0] });
+    this.setState({ selectedFile: event.target.files[0] });
   };
 
   onFileUpload = () => {
@@ -34,7 +34,8 @@ class App extends Component {
           <p>File name: {this.state.selectedFile.name}</p>
           <p>File type: {this.state.selectedFile.type}</p>
           <p>
-            Last modified: {this.state.selectedFile.lastModified.toDateString()}
+            Last modified:{" "}
+            {this.state.selectedFile.lastModifiedDate.toDateString()}
           </p>
         </div>
       );
